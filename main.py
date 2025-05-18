@@ -164,8 +164,8 @@ test_dst = FdDataset(data, 'test', test_idx=None)
 print("Fold", k, 'n_train:', len(train_dst), 'n_valid:', len(val_dst), 'n_test:', len(test_dst))
 
 train_loader = DataLoader(train_dst, batch_size=config.batch_size, shuffle=True, collate_fn=collate_fn)
-val_loader = DataLoader(val_dst, batch_size=config.batch_size, shuffle=True,  collate_fn=collate_fn)   #-----PPMI False
-test_loader = DataLoader(test_dst, batch_size=config.batch_size, shuffle=True,  collate_fn=collate_fn)  #----PPMI False
+val_loader = DataLoader(val_dst, batch_size=config.batch_size, shuffle=True,  collate_fn=collate_fn)   
+test_loader = DataLoader(test_dst, batch_size=config.batch_size, shuffle=True,  collate_fn=collate_fn) 
 
 model = Model(config.hidden_size, config.attn_hidden_size, data, n_layers=len(data)-1, dropout=config.dropout)
 model.to(device)
